@@ -29,7 +29,13 @@ public class TestCase_Demo {
         this.driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
     }
     @Test
-    public void clickToAccessibilityButton(){
+    public void TC_01_getTextOfAccessibilityButton(){
+        API_Demo_PageObject apiDemoPage = new API_Demo_PageObject(this.driver);
+        System.out.println(apiDemoPage.getTextOfAccessibilityButton(driver));
+
+    }
+    @Test
+    public void TC_02_clickToAccessibilityButton(){
         API_Demo_PageObject apiDemoPage = new API_Demo_PageObject(this.driver);
         apiDemoPage.clickToAccessibilityButton(driver);
     }

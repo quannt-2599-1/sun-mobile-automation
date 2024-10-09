@@ -27,4 +27,12 @@ public class BasePage {
         WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         explicitWait.until(ExpectedConditions.elementToBeClickable(getWebElement(driver,xpathLocator)));
     }
+    public void waitForElementVisible(AppiumDriver driver, String xpathLocator){
+        WebDriverWait explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        explicitWait.until(ExpectedConditions.visibilityOf(getWebElement(driver,xpathLocator)));
+    }
+    public String getTextElement(AppiumDriver driver, String xpathLocator){
+        waitForElementVisible(driver,xpathLocator);
+        return getWebElement(driver,xpathLocator).getText();
+    }
 }

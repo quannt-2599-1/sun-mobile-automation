@@ -11,5 +11,8 @@ public class API_Demo_PageObject extends BasePage{
     public void clickToAccessibilityButton(AppiumDriver driver){
         clickToElement(driver, API_Demo_UI.ACCESSIBILITY_BUTTON);
     }
+    public String getTextOfAccessibilityButton(AppiumDriver driver){
+        return getTextElement(driver, API_Demo_UI.ACCESSIBILITY_BUTTON);
+    }
 
 }
