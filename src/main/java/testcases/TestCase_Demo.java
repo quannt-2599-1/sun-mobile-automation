@@ -4,7 +4,6 @@ import actions.API_Demo_PageObject;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -15,6 +14,9 @@ import java.time.Duration;
 public class TestCase_Demo {
     AppiumDriver driver;
     API_Demo_PageObject apiDemoPage;
+    private int endX = 655;
+    private int endY = 531;
+
 //public TestCase_Demo(){
 //
 //}
@@ -34,12 +36,39 @@ public class TestCase_Demo {
         System.out.println(apiDemoPage.getTextOfAccessibilityButton(driver));
 
     }
-    @Test
     public void TC_02_clickToAccessibilityButton(){
         API_Demo_PageObject apiDemoPage = new API_Demo_PageObject(this.driver);
         apiDemoPage.clickToAccessibilityButton(driver);
     }
-    @AfterClass
+
+    public void TC_03_longClickGesture(){
+        API_Demo_PageObject apiDemoPage = new API_Demo_PageObject(this.driver);
+        apiDemoPage.clickToViewsButton(driver);
+        apiDemoPage.clickToDragAndDropButton(driver);
+        apiDemoPage.longClickToDragDot(driver);
+    }
+
+    public void TC_04_dragDot(){
+        API_Demo_PageObject apiDemoPage = new API_Demo_PageObject(this.driver);
+        apiDemoPage.clickToViewsButton(driver);
+        apiDemoPage.clickToDragAndDropButton(driver);
+        apiDemoPage.dragDotToNewLocation(driver,endX,endY);
+    }
+    @Test
+    public void TC_05_swipeListView(){
+        API_Demo_PageObject apiDemoPage = new API_Demo_PageObject(this.driver);
+        apiDemoPage.clickToViewsButton(driver);
+        apiDemoPage.swipeUpListView(driver);
+        apiDemoPage.sleepThread(3);
+        apiDemoPage.swipeDownListView(driver);
+        apiDemoPage.clickToGalleryButton(driver);
+        apiDemoPage.clickToPhotoButton(driver);
+        apiDemoPage.swipeLeftPhotoView(driver);
+
+    }
+
+
+
     public void afterClass(){
     driver.quit();
     }
