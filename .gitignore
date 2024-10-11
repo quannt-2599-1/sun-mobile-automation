@@ -1,0 +1,12 @@
+target/**
+/target/
+test-output/**
+./.idea/
+ServerLogs/**
+.idea/
+./.idea/**
+*.properties
+reports/**
+src/test/resources/app/**
+.classpath
+logs/**

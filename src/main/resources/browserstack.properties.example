@@ -1,0 +1,13 @@
+userName=your_username
+accessKey=your_access_key
+appiumVersion=2.6.0
+sessionName=session_name
+projectName=project_name
+buildName=build_name
+debug=true
+enableCameraImageInjection=true
+woundWithSticker=data/images/wound_with_sticker.png
+woundWithoutSticker=data/images/wound_without_sticker.png
+healedWound=data/images/healed_wound.png
+interactiveDebugging=false
+# interactiveDebugging=true (to enable debug)

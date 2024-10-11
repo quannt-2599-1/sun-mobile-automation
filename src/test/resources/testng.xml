@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+	<test name="Test_Suite_SmokeTest">
+		<parameter name="emulator" value="true"/>
+		<parameter name="platformName" value="Android"/>
+		<classes>
+			<class name="runners.smoketest.app.LoginSuccessRunnerTest" />
+			<class name="runners.smoketest.app.LoginUnsuccessRunnerTest" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,26 @@
+# If using BrowserStack for test Device, please upload app to BrowserStack and config Device name (androidAvd),
+# When run on browserstack
+# testDevice=browserstack
+# androidAvd=Google Pixel 7
+# androidAppLocation=bs://4b4....
+
+# When run on Android local
+testDevice=local
+androidAutomationName=UiAutomator2
+androidAppPackage=com.swaglabsmobileapp
+androidAppActivity=com.swaglabsmobileapp.MainActivity
+androidAvd=Pixel_7
+androidAppLocation=sauceLabs.apk
+
+# When run on iOS local
+iOSAutomationName=XCUITest
+iOSBundleId=
+iOSAppLocation=
+
+# Configs paths for Server
+path=/home/owner/.local/bin
+javaHome=/Library/Java/JavaVirtualMachines/jdk-22.jdk/Contents/Home
+appiumJsPath=/opt/homebrew/lib/node_modules/appium/build/lib/main.js
+androidHome=/Users/owner/Library/Android/sdk
+nodePath=/opt/homebrew/opt/node@20/bin/node
+port=4723
