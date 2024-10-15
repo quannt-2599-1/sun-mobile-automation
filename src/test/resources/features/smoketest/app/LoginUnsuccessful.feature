@@ -18,3 +18,17 @@ Feature: Login scenarios
     Examples:
       | password | error                                                        |
       | invalid  | Username and password do not match any user in this service. |
+Scenario Outline: Login unsuccessfully - blank username
+    When I enter password
+    And I press login button
+    Then I should see a blank username error message like "<error>"
+    Examples:
+      | username | error                                                        |
+      | blank  | Username is required |
+Scenario Outline: Login unsuccessfully - blank password
+    When I enter username
+    And I press login button
+    Then I should see a blank password error message like "<error>"
+    Examples:
+      | error        |
+      | Password is required |

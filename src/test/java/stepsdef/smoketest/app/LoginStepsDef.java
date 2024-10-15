@@ -48,6 +48,14 @@ public class LoginStepsDef {
     public void shouldSeeInvalidAccountError(String error) throws Exception {
         Assert.assertEquals(new LoginScreen().getInvalidAccountError().trim(), error.trim());
     }
+    @Then("I should see a blank username error message like {string}")
+    public void shouldSeeErrorMessageBlankUsername(String error) throws Exception {
+        Assert.assertEquals(new LoginScreen().getErrorMessageUsernameRequired().trim(), error.trim());
+    }
+    @Then("I should see a blank password error message like {string}")
+    public void shouldSeeErrorMessageBlankPassword(String error) throws Exception {
+        Assert.assertEquals(new LoginScreen().getErrorMessagePasswordRequired().trim(), error.trim());
+    }
 
     @Then("I should see homepage")
     public void shouldSeeHomepageItems() throws Exception {

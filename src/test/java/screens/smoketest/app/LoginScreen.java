@@ -28,6 +28,11 @@ public class LoginScreen extends BaseTest {
     @iOSXCUITFindBy()
     private WebElement invalidAccountErrorTxt;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Username is required\"]")
+    private WebElement errorMessageUsernameRequired;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"Password is required\"]")
+    private WebElement errorMessagePasswordRequired;
+
     public void pressLoginBtn() {
         click(loginBtn);
     }
@@ -44,6 +49,12 @@ public class LoginScreen extends BaseTest {
 
     public String getInvalidAccountError() {
         return getAttribute(invalidAccountErrorTxt, "text");
+    }
+    public String getErrorMessageUsernameRequired(){
+        return getAttribute(errorMessageUsernameRequired,"text");
+    }
+    public String getErrorMessagePasswordRequired(){
+        return getAttribute(errorMessagePasswordRequired,"text");
     }
 
 }
