@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 public class HomepageScreen extends BaseTest {
 
     @AndroidFindBy(accessibility = "test-Cart drop zone")
-    @iOSXCUITFindBy()
     private WebElement cardItem;
 
     @AndroidFindBy(accessibility = "test-PRODUCTS")
-    @iOSXCUITFindBy()
     private WebElement productsItem;
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Menu\"]/following-sibling::android.widget.ImageView")
+    private WebElement homePageImage;
 
     public boolean isCardItemPresent() {
         return find(cardItem, 1);
@@ -21,5 +21,8 @@ public class HomepageScreen extends BaseTest {
 
     public boolean isProductsItemPresent() {
         return find(productsItem, 1);
+    }
+    public boolean isHomePageImageDisplays(){
+        return find(homePageImage, 1);
     }
 }
