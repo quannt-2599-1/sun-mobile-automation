@@ -15,7 +15,6 @@ public class LoginScreen extends BaseTest {
     @AndroidFindBy(accessibility = "test-Password")
     @iOSXCUITFindBy()
     private WebElement passwordField;
-
     @AndroidFindBy(accessibility = "test-LOGIN")
     @iOSXCUITFindBy()
     private WebElement loginBtn;

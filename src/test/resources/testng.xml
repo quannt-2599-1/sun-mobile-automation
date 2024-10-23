@@ -7,6 +7,8 @@
 		<classes>
 			<class name="runners.smoketest.app.LoginSuccessRunnerTest" />
 			<class name="runners.smoketest.app.LoginUnsuccessRunnerTest" />
+			<class name="runners.smoketest.app.HomePageRunnerTest" />
+			<class name="runners.smoketest.app.CartScreenRunnerTest" />
 		</classes>
 	</test>
 </suite>

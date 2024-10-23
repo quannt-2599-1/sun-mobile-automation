@@ -6,9 +6,12 @@ import drivers.GlobalParams;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.InteractsWithApps;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
@@ -159,6 +162,14 @@ public class BaseTest {
         waitForVisibility(e);
         return driver.findElement(e).getAttribute(attribute);
     }
+    public void scrollDownToElement(WebElement e){
+        waitForVisibility(e);
+        boolean canScrollMore = (Boolean) driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement) e).getId(),
+                "direction", "down",
+                "percent", 1.0
+        ));
+    }
 
     public String getText(WebElement e, String msg) {
         String txt;
@@ -228,8 +239,18 @@ public class BaseTest {
                                 ".setAsVerticalList()" +
                                 ".scrollForward()" +  // add scrollForward() to AlwaysScrollDown
                                 ".scrollIntoView(new UiSelector()." + childLocAttr + "(\"" + childLocValue + "\"));"
+
                 )
         );
+    }
+    public void scrollDownGesture(){
+
+        boolean canScrollMore = (Boolean) driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+                "left",100,"top",100,"width",600,"height",600,
+              //  "elementId", ((RemoteWebElement) element).getId(),
+                "direction", "down",
+                "percent", 1.0
+        ));
     }
 
     public WebElement iOSScrollToElementUsingMobileScroll(WebElement e) {
