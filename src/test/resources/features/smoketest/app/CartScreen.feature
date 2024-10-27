@@ -32,15 +32,15 @@ Feature: Cart scenarios
 #      Examples:
 #        | example  |
 #        | example  |
-#  Scenario Outline: Delete product from cart
-#    Given I login successful
-#    When I add product Sauce Labs Backpack to cart
-#    And I click to cart icon
-#    And I click to remove button
-#    Then I should see product Sauce Labs Backpack remove from cart
-#    Examples:
-#      | example  |
-#      | example  |
+  Scenario Outline: Delete product from cart
+    Given I login successful
+    When I add product Sauce Labs Backpack to cart
+    And I click to cart icon
+    And I click to remove button
+    Then I should see product Sauce Labs Backpack remove from cart
+    Examples:
+      | example  |
+      | example  |
 #  Scenario Outline: Add more item to Cart
 #    Given I login successful
 #    When I add product Sauce Labs Backpack to cart
@@ -54,12 +54,12 @@ Feature: Cart scenarios
 #      | childLocAttr  |childLocValue|
 #      | text  |Sauce Labs Bolt T-Shirt|
 
-  Scenario Outline: Checkout confirmation screen displays when click to Checkout button
-    Given I login successful
-    When I add product Sauce Labs Backpack to cart
-    And I click to cart icon
-    And I click to checkout Button
-    Then I should see Checkout confirmation screen displays
-    Examples:
-      | example  |
-      | example  |
+#  Scenario Outline: Checkout confirmation screen displays when click to Checkout button
+#    Given I login successful
+#    When I add product Sauce Labs Backpack to cart
+#    And I click to cart icon
+#    And I click to checkout Button
+#    Then I should see Checkout confirmation screen displays
+#    Examples:
+#      | example  |
+#      | example  |

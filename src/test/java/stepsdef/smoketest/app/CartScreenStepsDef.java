@@ -32,7 +32,7 @@ public class CartScreenStepsDef {
     @When("I click to remove button")
     public void clickToRemoveButton(){
         new CartScreen().clickToRemoveButton();
-        new CartScreen().sleep(3000);
+
     }
     @When("I click Continue shopping button")
     public void clickToContinueShoppingButton(){

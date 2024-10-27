@@ -107,6 +107,10 @@ public class BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtils.WAIT));
         wait.until(ExpectedConditions.visibilityOfElementLocated(e));
     }
+    public void waitForClickable(WebElement e) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtils.WAIT));
+        wait.until(ExpectedConditions.elementToBeClickable(e));
+    }
 
     public void clear(WebElement e) {
         waitForVisibility(e);
@@ -114,7 +118,7 @@ public class BaseTest {
     }
 
     public void click(WebElement e) {
-        waitForVisibility(e);
+        waitForClickable(e);
         e.click();
     }
 
@@ -327,6 +331,15 @@ public class BaseTest {
         params.put("direction", "up");
         params.put("percent", percent);
         driver.executeScript("mobile: swipeGesture", params);
+    }
+    public boolean isElementEnable(final WebElement element, int timeout) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+            return wait.until((ExpectedCondition<Boolean>) driver -> element.isEnabled());
+        } catch (TimeoutException e) {
+            return false;
+        }
+
     }
 
     public void injectionImageWithBrowserstack(String tokenImageUpload) {
